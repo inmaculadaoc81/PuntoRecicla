@@ -1,0 +1,8 @@
+{
+  "name": "puntorecicla-web",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "googleapis": "^173.0.0"
+  }
+}
