@@ -52,4 +52,39 @@ menuBtn?.addEventListener('click',()=>{const open=mainMenu.classList.toggle('ope
 mainMenu?.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{mainMenu.classList.remove('open');menuBtn.setAttribute('aria-expanded','false')}));
 const f=document.getElementById('contact-form'),s=document.getElementById('status');f.addEventListener('submit',async e=>{e.preventDefault();s.textContent='Enviando...';try{const r=await fetch('/api/contacto',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(new FormData(f).entries()))});if(!r.ok)throw 0;s.textContent='Consulta enviada correctamente.';s.style.color='green';f.reset()}catch{s.textContent='No se pudo enviar. Contacta por teléfono o WhatsApp.';s.style.color='#b72f2f'}});
 </script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"PuntoRecicla","url":"http://reciclajedeordenadores.com.es/","telephone":"+34 910 05 47 24","description":"Reciclaje de ordenadores, portátiles y equipos informáticos y destrucción de datos personales en Madrid.","address":{"@type":"PostalAddress","streetAddress":"C. Joaquín María López, 26","postalCode":"28015","addressLocality":"Madrid","addressCountry":"ES"}}</script></body></html>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"PuntoRecicla","url":"http://reciclajedeordenadores.com.es/","telephone":"+34 910 05 47 24","description":"Reciclaje de ordenadores, portátiles y equipos informáticos y destrucción de datos personales en Madrid.","address":{"@type":"PostalAddress","streetAddress":"C. Joaquín María López, 26","postalCode":"28015","addressLocality":"Madrid","addressCountry":"ES"}}</script><div id="cookie-banner" class="cookie-banner" hidden>
+  <p>Utilizamos cookies y tecnologías similares propias y de terceros, de sesión o persistentes, para hacer funcionar de manera segura nuestra página web y personalizar su contenido. Igualmente, utilizamos cookies para medir y obtener datos de la navegación que realizas y para ajustar la publicidad a tus gustos y preferencias. Puedes aceptar el uso de cookies a continuación.</p>
+  <div class="cookie-actions">
+    <button type="button" class="cookie-btn" id="cookie-accept">Aceptar</button>
+    <button type="button" class="cookie-btn" id="cookie-reject">Rechazar</button>
+    <a class="cookie-btn cookie-link" href="https://kelatos.com/privacy-policy/" target="_blank" rel="noopener">Política de privacidad</a>
+  </div>
+  <button type="button" class="cookie-close" id="cookie-close" aria-label="Cerrar">&times;</button>
+</div>
+<style>
+.cookie-banner{position:fixed;left:0;right:0;bottom:0;z-index:99999;background:#22262f;color:#fff;padding:20px 56px 20px 20px;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:16px;text-align:center;box-shadow:0 -8px 30px rgba(0,0,0,.25);font-family:Arial,Helvetica,sans-serif}
+.cookie-banner p{margin:0;max-width:900px;font-size:13.5px;line-height:1.5;flex:1 1 500px;color:#fff}
+.cookie-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;flex:0 0 auto}
+.cookie-btn{display:inline-block;border:0;background:#1fb6ad;color:#fff!important;font-weight:700;font-size:13.5px;padding:10px 18px;border-radius:6px;cursor:pointer;text-decoration:none;white-space:nowrap}
+.cookie-btn:hover{background:#189d95}
+.cookie-close{position:absolute;top:10px;right:14px;background:transparent;border:0;color:#aab0bb;font-size:20px;line-height:1;cursor:pointer;padding:4px}
+.cookie-close:hover{color:#fff}
+@media(max-width:700px){.cookie-banner{padding:18px 44px 18px 16px;text-align:left}.cookie-actions{justify-content:flex-start}}
+</style>
+<script>
+(function(){
+  var KEY='kelatos_cookie_consent';
+  try{ if(localStorage.getItem(KEY)) return; }catch(e){}
+  var banner=document.getElementById('cookie-banner');
+  if(!banner) return;
+  banner.hidden=false;
+  function setConsent(value){
+    try{ localStorage.setItem(KEY,value); }catch(e){}
+    banner.hidden=true;
+  }
+  var a=document.getElementById('cookie-accept'); if(a) a.addEventListener('click',function(){setConsent('accepted')});
+  var r=document.getElementById('cookie-reject'); if(r) r.addEventListener('click',function(){setConsent('rejected')});
+  var c=document.getElementById('cookie-close'); if(c) c.addEventListener('click',function(){setConsent('dismissed')});
+})();
+</script>
+</body></html>
