@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /api/
-Sitemap: https://gamefix.com.es/sitemap.xml
+Sitemap: http://reciclajedeordenadores.com.es/sitemap.xml
