@@ -37,6 +37,32 @@ REVISIÓN (fixes aplicados en esta pasada):
   (+34 914 46 85 03) y añadido white-space:nowrap como salvaguarda. El
   botón grande de teléfono de la sección hero (.cta.phone) conserva su
   texto completo, ya que ahí no hay problema de desbordamiento.
+
+REVISIÓN ADICIONAL (checklist unificado de la familia, a petición del cliente):
+- H1 verificado: "Reciclamos tus equipos. Protegemos toda tu
+  información." ya es afirmativo, corto y no repite la plantilla "no
+  funciona". No se ha tocado.
+- BUG REAL — el botón CTA de teléfono no tenía icono, a diferencia del
+  de WhatsApp. Añadido (verificado con cuidado el cierre de las
+  etiquetas </a>: 18 aperturas / 18 cierres).
+- BUG REAL — la casilla de política de privacidad existía pero el
+  texto no enlazaba a ningún sitio. Añadido el enlace estándar de la
+  familia a https://kelatos.com/privacy-policy/, resaltado en azul.
+- BUG REAL — texto decorativo gigante ".data:after" ("DATOS", 190px)
+  sin ninguna reducción de tamaño en tablet/móvil. Añadida (100px
+  tablet, 64px móvil). El ticker ".hero:after" ya se ocultaba
+  correctamente en móvil, no se ha tocado.
+- Añadido "Sábados, domingos y días festivos estamos cerrados" debajo
+  del horario.
+- No se ha añadido franja de aviso de servicio técnico independiente:
+  no aplica a este negocio (reciclaje de equipos y destrucción de
+  datos, sin el enfoque de reparación de marcas concretas del resto
+  de la familia).
+- Verificado sin bugs: no existe ninguna etiqueta rotada tipo
+  hero-chip (.shape es una forma decorativa sin texto); Cal.com ya
+  estaba presente; schema.org ya usaba correctamente el teléfono de la
+  caja de información (+34 910 05 47 24, distinto del de los
+  botones); formulario correctamente conectado a /api/contacto.
 - H1 de portada reescrito, corto, directo y totalmente afirmativo
   (sin interrogación ni condicionales): "Reciclamos tus equipos.
   Protegemos toda tu información." Tamaño del H1 aumentado:
