@@ -90,3 +90,11 @@ REVISIÓN ADICIONAL (checklist unificado de la familia, a petición del cliente 
 - No se ha añadido franja de aviso de servicio técnico independiente:
   no aplica a este negocio (reciclaje de equipos y destrucción de
   datos, sin el enfoque de reparación del resto de la familia).
+
+SOLICITUD DE RECICLAJE (2026-11-03):
+- Página independiente /solicitud-reciclaje (solicitud-reciclaje.html + assets/reciclaje.css + assets/reciclaje.js), fuera de la landing.
+- Envío a /api/reciclaje (api/reciclaje.js): valida en servidor, admite hasta 5 adjuntos (fotos JPG o PDF, 3 MB) y manda el resumen por correo
+  (mismas variables SMTP_* / CONTACT_EMAIL que /api/contacto). Campo trampa anti-spam "web". Referencia RZ-AAAAMMDD-XXXX.
+- QR de recepción: assets/qr-solicitud-reciclaje.svg (web) y .png (imprimir). Apunta a /solicitud-reciclaje?utm_source=qr&utm_medium=recepcion.
+  Está en la página de la solicitud y en la landing (sección "Solicitud de reciclaje"), y todos los enlaces se abren en pestaña nueva.
+- vercel.json: la nueva ruta se excluye de la redirección 301 a la home. sitemap.xml incluye la página nueva.

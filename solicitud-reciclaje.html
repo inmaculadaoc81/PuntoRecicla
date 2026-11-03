@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Solicitud de reciclaje y destrucción de datos | PuntoRecicla Madrid</title>
+<meta name="description" content="Rellena la solicitud de reciclaje de ordenadores y equipos informáticos o de destrucción de datos y documentos. Recogida a domicilio en la España peninsular o entrega en nuestro establecimiento de Madrid.">
+<link rel="canonical" href="https://reciclajedeordenadores.com.es/solicitud-reciclaje">
+<link rel="icon" href="/assets/favicon-puntorecicla.png">
+<link rel="stylesheet" href="/assets/styles.css">
+<link rel="stylesheet" href="/assets/reciclaje.css">
+<meta name="robots" content="index,follow">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5Q94Z7KL0B"></script>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-5Q94Z7KL0B');
+</script>
+</head>
+<body class="page-solicitud">
+<header><div class="wrap nav"><a href="/"><img class="logo" src="/assets/logo-puntorecicla.png" alt="PuntoRecicla"></a><nav class="links" id="mainMenu"><a href="/#servicios">Qué hacemos</a><a href="/#datos">Tus datos</a><a href="/#proceso">Cómo funciona</a><a href="/#contacto">Contacto</a><a class="navcall" href="tel:+34914468503">+34 914 46 85 03</a></nav><button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainMenu">Menú</button></div></header>
+
+<main>
+<section class="req-hero"><div class="wrap req-hero-grid">
+  <div>
+    <div class="eyebrow">Solicitud de reciclaje</div>
+    <h1>Cuéntanos qué quieres <span class="accent">reciclar o destruir</span></h1>
+    <p class="req-lead">Rellena este formulario con lo que necesitas retirar. Nuestro equipo lo revisará y se pondrá en contacto contigo por el medio que prefieras para confirmar la forma de entrega, la disponibilidad y el presupuesto.</p>
+    <ul class="req-points">
+      <li><b>Equipos informáticos y soportes</b> con información personal o profesional</li>
+      <li><b>Borrado seguro o destrucción física</b>, con certificado si lo necesitas</li>
+      <li><b>Recogida a domicilio</b> en la España peninsular, o entrega en nuestro local de Madrid</li>
+    </ul>
+    <p class="req-note">El envío del formulario no confirma automáticamente la recogida, la disponibilidad ni el precio.</p>
+  </div>
+  <aside class="req-qr" aria-label="Abrir esta solicitud en el móvil">
+    <img src="/assets/qr-solicitud-reciclaje.svg" width="168" height="168" alt="Código QR de la solicitud de reciclaje">
+    <strong>¿Prefieres hacerlo desde el móvil?</strong>
+    <span>Escanea el código y rellena la solicitud desde tu teléfono.</span>
+  </aside>
+</div></section>
+
+<section class="req-body"><div class="wrap">
+<div class="req-progress" aria-hidden="true"><div class="req-progress-bar" id="progressBar"></div></div>
+<p class="req-progress-text" id="progressText">Campos obligatorios completados: 0 de 0</p>
+
+<form id="solicitud" novalidate autocomplete="on">
+  <div class="req-hp" aria-hidden="true"><label>No rellenes este campo<input type="text" name="web" tabindex="-1" autocomplete="off"></label></div>
+
+  <fieldset class="req-card" id="s1">
+    <legend><span class="n">1</span> Tus datos de contacto</legend>
+    <div class="req-grid">
+      <label class="f"><span class="t">Idioma preferido <em>*</em></span><select name="idioma" id="idioma" required></select></label>
+      <label class="f"><span class="t">País de procedencia <em>*</em></span><select name="pais" id="pais" required></select></label>
+      <label class="f"><span class="t">Tipo de solicitante <em>*</em></span><select name="tipo_solicitante" required>
+          <option value="">Selecciona una opción</option>
+          <option>Particular</option><option>Autónomo</option><option>Empresa</option><option>Administración pública</option><option>Centro educativo</option><option>Asociación u ONG</option><option>Otro</option>
+        </select></label>
+      <label class="f"><span class="t">Nombre y apellidos <em>*</em></span><input name="nombre" autocomplete="name" maxlength="120" required></label>
+      <label class="f"><span class="t">Empresa u organización</span><input name="empresa" autocomplete="organization" maxlength="140" placeholder="Déjalo en blanco si lo solicitas como particular"></label>
+      <label class="f"><span class="t">NIF, NIE o CIF</span><input name="nif" maxlength="20" autocomplete="off"></label>
+      <label class="f"><span class="t">Correo electrónico <em>*</em></span><input type="email" name="email" autocomplete="email" maxlength="180" required></label>
+      <label class="f"><span class="t">Teléfono <em>*</em></span><input type="tel" name="telefono" autocomplete="tel" maxlength="30" placeholder="+34 600 000 000" required></label>
+      <label class="f"><span class="t">¿Cómo prefieres que contactemos contigo? <em>*</em></span><select name="contacto_preferido" required><option value="">Selecciona una opción</option><option>WhatsApp</option><option>Llamada telefónica</option><option>Correo electrónico</option></select></label>
+    </div>
+  </fieldset>
+
+  <fieldset class="req-card" id="s2">
+    <legend><span class="n">2</span> Qué quieres reciclar o destruir</legend>
+    <div class="f"><span class="lbl">¿Qué deseas reciclar o destruir? <em>*</em></span>
+      <div class="checks" data-group="materiales" data-required="1">
+        <label><input type="checkbox" name="materiales" value="Ordenadores portátiles">Ordenadores portátiles</label>
+        <label><input type="checkbox" name="materiales" value="Ordenadores de sobremesa">Ordenadores de sobremesa</label>
+        <label><input type="checkbox" name="materiales" value="Servidores">Servidores</label>
+        <label><input type="checkbox" name="materiales" value="Monitores">Monitores</label>
+        <label><input type="checkbox" name="materiales" value="Impresoras o escáneres">Impresoras o escáneres</label>
+        <label><input type="checkbox" name="materiales" value="Teléfonos móviles">Teléfonos móviles</label>
+        <label><input type="checkbox" name="materiales" value="Tablets">Tablets</label>
+        <label><input type="checkbox" name="materiales" value="Discos duros HDD">Discos duros HDD</label>
+        <label><input type="checkbox" name="materiales" value="Unidades SSD">Unidades SSD</label>
+        <label><input type="checkbox" name="materiales" value="Memorias USB">Memorias USB</label>
+        <label><input type="checkbox" name="materiales" value="Tarjetas de memoria">Tarjetas de memoria</label>
+        <label><input type="checkbox" name="materiales" value="Teclados, ratones y periféricos">Teclados, ratones y periféricos</label>
+        <label><input type="checkbox" name="materiales" value="Cables, cargadores o adaptadores">Cables, cargadores o adaptadores</label>
+        <label><input type="checkbox" name="materiales" value="Documentos en papel">Documentos en papel</label>
+        <label><input type="checkbox" name="materiales" value="Otros equipos o materiales">Otros equipos o materiales</label>
+      </div>
+    </div>
+    <div class="req-grid">
+      <label class="f"><span class="t">Cantidad aproximada <em>*</em></span><input name="cantidad" maxlength="120" required><small>Indica el número aproximado de equipos, soportes o cajas de documentos.</small></label>
+      <label class="f"><span class="t">Marca y modelo</span><input name="marca_modelo" maxlength="300" placeholder="Ejemplo: 2 Lenovo ThinkPad, 1 Dell Latitude y 3 discos duros"></label>
+      <label class="f"><span class="t">Estado de los equipos <em>*</em></span><select name="estado" required><option value="">Selecciona una opción</option><option>Funcionan correctamente</option><option>Algunos funcionan y otros no</option><option>No funcionan</option><option>Están rotos o dañados</option><option>No lo sé</option></select></label>
+      <label class="f"><span class="t">¿Los dispositivos contienen información personal, profesional o confidencial? <em>*</em></span><select name="datos_personales" required><option value="">Selecciona una opción</option><option>Sí, contienen información</option><option>No contienen información</option><option>No lo sé</option></select></label>
+    </div>
+    <label class="f"><span class="t">Descripción de los equipos o materiales</span><textarea name="descripcion" rows="3" maxlength="2000" placeholder="Ejemplo: dos portátiles, un ordenador de sobremesa, tres discos duros y dos cajas de documentos."></textarea></label>
+    <label class="f"><span class="t">¿Has realizado una copia de seguridad de la información que deseas conservar? <em>*</em></span><select name="copia_seguridad" id="copia" required><option value="">Selecciona una opción</option><option>Sí, ya la he realizado</option><option>No, no necesito conservar la información</option><option>No, y necesito conservarla</option><option>No aplica</option></select>
+      <small>Los procesos de borrado o destrucción pueden ser irreversibles. Realiza una copia de seguridad antes de entregar cualquier equipo o soporte.</small></label>
+    <p class="req-alert" id="copiaAviso" hidden>Si necesitas conservar la información, haz la copia de seguridad antes de entregar el equipo: el borrado o la destrucción pueden ser irreversibles.</p>
+  </fieldset>
+
+  <fieldset class="req-card" id="s3">
+    <legend><span class="n">3</span> Servicios y forma de entrega</legend>
+    <div class="f"><span class="lbl">Selecciona los servicios que necesitas <em>*</em></span>
+      <div class="checks" data-group="servicios" data-required="1">
+        <label><input type="checkbox" name="servicios" value="Reciclaje de ordenadores y dispositivos electrónicos">Reciclaje de ordenadores y dispositivos electrónicos</label>
+        <label><input type="checkbox" name="servicios" value="Revisión para posible reutilización">Revisión para posible reutilización</label>
+        <label><input type="checkbox" name="servicios" value="Preparación para una segunda vida útil">Preparación para una segunda vida útil</label>
+        <label><input type="checkbox" name="servicios" value="Borrado seguro de datos" data-destruye="1">Borrado seguro de datos</label>
+        <label><input type="checkbox" name="servicios" value="Destrucción física de discos duros" data-destruye="1">Destrucción física de discos duros</label>
+        <label><input type="checkbox" name="servicios" value="Destrucción física de unidades SSD" data-destruye="1">Destrucción física de unidades SSD</label>
+        <label><input type="checkbox" name="servicios" value="Destrucción de memorias USB o tarjetas" data-destruye="1">Destrucción de memorias USB o tarjetas</label>
+        <label><input type="checkbox" name="servicios" value="Destrucción de documentos en papel" data-destruye="1">Destrucción de documentos en papel</label>
+        <label><input type="checkbox" name="servicios" value="Certificado de destrucción">Certificado de destrucción</label>
+        <label><input type="checkbox" name="servicios" value="Justificante o certificado medioambiental">Justificante o certificado medioambiental</label>
+        <label><input type="checkbox" name="servicios" value="Contrato de confidencialidad">Contrato de confidencialidad</label>
+        <label><input type="checkbox" name="servicios" value="Recogida a domicilio">Recogida a domicilio</label>
+        <label><input type="checkbox" name="servicios" value="Necesito asesoramiento antes de elegir">Necesito asesoramiento antes de elegir</label>
+      </div>
+    </div>
+    <div class="req-grid">
+      <label class="f"><span class="t">Nivel de destrucción solicitado</span><select name="nivel_destruccion"><option value="">Selecciona una opción</option><option>Borrado seguro del contenido</option><option>Destrucción física del soporte</option><option>Borrado seguro y destrucción física</option><option>No lo sé, necesito asesoramiento</option></select></label>
+      <label class="f"><span class="t">¿Necesitas identificar cada soporte por número de serie?</span><select name="numero_serie"><option value="">Selecciona una opción</option><option>Sí, necesito el listado con números de serie</option><option>No es necesario</option><option>No lo sé</option></select></label>
+    </div>
+    <div class="f"><span class="lbl">¿Cómo deseas entregar los equipos? <em>*</em></span>
+      <div class="radios" data-group="entrega" data-required="1">
+        <label><input type="radio" name="entrega" value="Los llevaré al establecimiento">Los llevaré al establecimiento</label>
+        <label><input type="radio" name="entrega" value="Solicito recogida a domicilio">Solicito recogida a domicilio</label>
+        <label><input type="radio" name="entrega" value="Necesito que contacten conmigo para decidirlo">Necesito que contacten conmigo para decidirlo</label>
+      </div>
+      <small>La recogida está disponible únicamente en la España peninsular. El envío del formulario no confirma automáticamente la recogida, la disponibilidad ni el precio.</small>
+    </div>
+  </fieldset>
+
+  <fieldset class="req-card" id="s4" hidden>
+    <legend><span class="n">4</span> Datos de la recogida</legend>
+    <div class="req-grid">
+      <label class="f"><span class="t">Dirección de recogida <em>*</em></span><input name="rec_direccion" maxlength="200" autocomplete="street-address"></label>
+      <label class="f"><span class="t">Código postal <em>*</em></span><input name="rec_cp" inputmode="numeric" maxlength="5" autocomplete="postal-code" placeholder="28015"></label>
+      <label class="f"><span class="t">Localidad <em>*</em></span><input name="rec_localidad" maxlength="100" autocomplete="address-level2"></label>
+      <label class="f"><span class="t">Provincia <em>*</em></span><select name="rec_provincia" id="provincia"></select></label>
+      <label class="f"><span class="t">Piso, planta, oficina o puerta</span><input name="rec_piso" maxlength="100"></label>
+      <label class="f"><span class="t">¿El edificio dispone de ascensor?</span><select name="rec_ascensor"><option value="">Selecciona una opción</option><option>Sí</option><option>No</option><option>No lo sé</option></select></label>
+      <label class="f"><span class="t">Fecha preferida de recogida</span><input type="date" name="rec_fecha" id="fecha"><small>Recogidas de lunes a viernes. Es una preferencia, no una cita confirmada.</small></label>
+      <label class="f"><span class="t">Franja horaria preferida</span><select name="rec_franja"><option value="">Selecciona una opción</option><option>Mañana</option><option>Tarde</option><option>Indiferente</option></select></label>
+      <label class="f"><span class="t">Persona de contacto durante la recogida</span><input name="rec_contacto" maxlength="120"></label>
+      <label class="f"><span class="t">Teléfono de la persona de contacto</span><input type="tel" name="rec_telefono" maxlength="30"></label>
+    </div>
+    <label class="f"><span class="t">¿Hay escaleras, restricciones de acceso o equipos especialmente pesados?</span><textarea name="rec_restricciones" rows="3" maxlength="1000"></textarea></label>
+  </fieldset>
+
+  <fieldset class="req-card" id="s5">
+    <legend><span class="n" id="n5">4</span> Fotografías e información adicional</legend>
+    <div class="f"><span class="lbl">Fotografías o inventario de los equipos</span>
+      <label class="req-file"><input type="file" id="archivos" accept="image/*,.pdf" multiple><span>Elegir archivos</span> <em id="archivosEstado">Ningún archivo seleccionado</em></label>
+      <small>Hasta 5 archivos (fotos o PDF), 2,5 MB en total; las fotos se reducen automáticamente. No adjuntes contraseñas, claves de acceso ni documentos con información personal innecesaria.</small>
+      <ul class="req-files" id="listaArchivos"></ul>
+    </div>
+    <label class="f"><span class="t">Información adicional</span><textarea name="adicional" rows="4" maxlength="2000" placeholder="Indica cantidades, peso, accesos, urgencia, certificados u otra información relevante."></textarea></label>
+  </fieldset>
+
+  <fieldset class="req-card" id="s6">
+    <legend><span class="n" id="n6">5</span> Confirmaciones</legend>
+    <label class="chk"><input type="checkbox" name="c_privacidad" required><span>He leído la información sobre protección de datos y la <a class="privacy-link" href="https://kelatos.com/privacy-policy/" target="_blank" rel="noopener">Política de privacidad</a>. <em>*</em></span></label>
+    <label class="chk"><input type="checkbox" name="c_condiciones" required><span>He leído y acepto las Condiciones del servicio de reciclaje, recogida y destrucción de datos o documentos. <em>*</em></span></label>
+    <label class="chk"><input type="checkbox" name="c_propiedad" required><span>Declaro que soy propietario de los equipos, soportes y documentos indicados o que dispongo de autorización suficiente para entregarlos, solicitar su reciclaje y, cuando corresponda, autorizar el borrado o destrucción de la información que contienen. <em>*</em></span></label>
+    <label class="chk"><input type="checkbox" name="c_destruccion" id="cDestruccion"><span>Autorizo expresamente el borrado o la destrucción de los datos y soportes indicados. Entiendo que el proceso puede ser irreversible y confirmo que he realizado las copias de seguridad necesarias o que no necesito conservar la información. <em class="cond" hidden>*</em></span></label>
+    <label class="chk"><input type="checkbox" name="c_whatsapp"><span>Autorizo que contacten conmigo mediante WhatsApp exclusivamente para gestionar esta solicitud, confirmar la recogida y resolver cuestiones relacionadas con el servicio.</span></label>
+    <label class="chk"><input type="checkbox" name="c_marketing"><span>Deseo recibir información, novedades y promociones relacionadas con los servicios ofrecidos.</span></label>
+
+    <div class="req-actions">
+      <button type="submit" class="submit" id="enviar">Enviar solicitud de reciclaje</button>
+      <p id="estado" role="status" aria-live="polite"></p>
+    </div>
+  </fieldset>
+</form>
+
+<div class="req-ok" id="exito" hidden tabindex="-1">
+  <div class="req-ok-ico">✓</div>
+  <h2>Solicitud recibida</h2>
+  <p>Hemos recibido tu solicitud. Tu referencia es <strong id="referencia"></strong>; indícala si nos escribes o llamas.</p>
+  <p>Revisaremos los datos y nos pondremos en contacto contigo por el medio que has elegido para confirmar la forma de entrega, la disponibilidad y el presupuesto. Recuerda que el envío del formulario no confirma automáticamente la recogida.</p>
+  <div class="req-ok-actions"><a class="cta wa" href="https://api.whatsapp.com/send?phone=34649970128&text=%C2%A1Hola%20PuntoRecicla!%20Acabo%20de%20enviar%20la%20solicitud%20de%20reciclaje" target="_blank" rel="noopener">Escribir por WhatsApp</a><a class="cta pickup" href="/">Volver a la web</a></div>
+</div>
+</div></section>
+</main>
+
+<footer><div class="wrap footer"><img src="/assets/logo-puntorecicla.png" alt="PuntoRecicla"><div>PuntoRecicla · Reciclaje de equipos informáticos · Madrid</div><a href="https://maps.app.goo.gl/mWm3BBLAc3JGMpFH7" target="_blank" rel="noopener">Ubicación y reseñas</a></div></footer>
+<script src="/assets/reciclaje.js" defer></script>
+</body>
+</html>
