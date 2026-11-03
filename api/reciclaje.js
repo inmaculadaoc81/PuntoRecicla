@@ -99,7 +99,7 @@ async function handler(req, res) {
     const d = v.datos;
     const ref = referencia();
     const port = Number(process.env.SMTP_PORT || 465);
-    const tr = nodemailer.createTransport({ host: process.env.SMTP_HOST, port, secure: String(process.env.SMTP_SECURE ?? "true") === "true", auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS } });
+    const tr = nodemailer.createTransport({ host: process.env.SMTP_HOST, port, secure: String(process.env.SMTP_SECURE ?? "true") === "true", auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }, connectionTimeout: 10000, greetingTimeout: 10000, socketTimeout: 25000 });
     await tr.sendMail({
       from: `"PuntoRecicla" <${process.env.SMTP_USER}>`,
       to: process.env.CONTACT_EMAIL || process.env.SMTP_USER,
@@ -111,7 +111,8 @@ async function handler(req, res) {
     return res.status(200).json({ ok: true, referencia: ref });
   } catch (e) {
     console.error(e);
-    return res.status(500).json({ ok: false, error: "No se pudo enviar la solicitud" });
+    // `codigo` es solo el tipo de fallo de nodemailer (EAUTH, ETIMEDOUT, ECONNECTION…): ayuda a diagnosticar el correo sin exponer ningún dato.
+    return res.status(500).json({ ok: false, error: "No se pudo enviar la solicitud", codigo: String((e && (e.code || e.responseCode)) || "DESCONOCIDO").slice(0, 30), configurado: !!(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) });
   }
 }
 

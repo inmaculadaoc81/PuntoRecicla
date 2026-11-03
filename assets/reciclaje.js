@@ -204,7 +204,10 @@
 
     var btn = $("#enviar"); btn.disabled = true; btn.textContent = "Enviando…";
     try {
-      var r = await fetch("/api/reciclaje", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(datos) });
+      // Si el servidor no responde en 45 s se corta, para que el botón no se quede en «Enviando…» para siempre.
+      var ctl = new AbortController(), reloj = setTimeout(function () { ctl.abort(); }, 45000);
+      var r = await fetch("/api/reciclaje", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(datos), signal: ctl.signal });
+      clearTimeout(reloj);
       var j = await r.json().catch(function () { return {}; });
       if (!r.ok || !j.ok) throw new Error(j.error || "No se pudo enviar");
       form.hidden = true;
