@@ -97,6 +97,17 @@ async function handler(req, res) {
     const v = validar(b);
     if (v.error) return res.status(400).json({ ok: false, error: v.error });
     const d = v.datos;
+    // Primero se registra en el dashboard de Kelatos (vista de reciclaje + aviso en la campana). Si no responde, se cae al correo.
+    try {
+      const ip = String(req.headers["x-forwarded-for"] || "").split(",")[0].trim().slice(0, 64);
+      const ctl = new AbortController();
+      const to = setTimeout(() => ctl.abort(), 20000);
+      const r = await fetch(process.env.RECICLAJE_API_URL || "https://db.affirmatechnology.com/kelatos-api/webhooks/reciclaje", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ ...b, ip, origen: "web-puntorecicla" }), signal: ctl.signal });
+      clearTimeout(to);
+      const j = await r.json().catch(() => ({}));
+      if (r.ok && j.ok && j.referencia) return res.status(200).json({ ok: true, referencia: j.referencia });
+      if (r.status >= 400 && r.status < 500) return res.status(r.status).json({ ok: false, error: j.error || "Solicitud no válida" });
+    } catch (e) { console.error("relay dashboard:", e && e.message); }
     const ref = referencia();
     const port = Number(process.env.SMTP_PORT || 465);
     const tr = nodemailer.createTransport({ host: process.env.SMTP_HOST, port, secure: String(process.env.SMTP_SECURE ?? "true") === "true", auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }, connectionTimeout: 10000, greetingTimeout: 10000, socketTimeout: 25000 });
