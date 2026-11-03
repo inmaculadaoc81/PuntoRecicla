@@ -98,6 +98,7 @@ async function handler(req, res) {
     if (v.error) return res.status(400).json({ ok: false, error: v.error });
     const d = v.datos;
     // Primero se registra en el dashboard de Kelatos (vista de reciclaje + aviso en la campana). Si no responde, se cae al correo.
+    let relayFallo = "";
     try {
       const ip = String(req.headers["x-forwarded-for"] || "").split(",")[0].trim().slice(0, 64);
       const ctl = new AbortController();
@@ -106,8 +107,9 @@ async function handler(req, res) {
       clearTimeout(to);
       const j = await r.json().catch(() => ({}));
       if (r.ok && j.ok && j.referencia) return res.status(200).json({ ok: true, referencia: j.referencia });
+      relayFallo = "HTTP " + r.status;
       if (r.status >= 400 && r.status < 500) return res.status(r.status).json({ ok: false, error: j.error || "Solicitud no válida" });
-    } catch (e) { console.error("relay dashboard:", e && e.message); }
+    } catch (e) { relayFallo = String((e && (e.cause && e.cause.code || e.name)) || "error").slice(0, 40); console.error("relay dashboard:", e && e.message); }
     const ref = referencia();
     const port = Number(process.env.SMTP_PORT || 465);
     const tr = nodemailer.createTransport({ host: process.env.SMTP_HOST, port, secure: String(process.env.SMTP_SECURE ?? "true") === "true", auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }, connectionTimeout: 10000, greetingTimeout: 10000, socketTimeout: 25000 });
@@ -123,7 +125,7 @@ async function handler(req, res) {
   } catch (e) {
     console.error(e);
     // `codigo` es solo el tipo de fallo de nodemailer (EAUTH, ETIMEDOUT, ECONNECTION…): ayuda a diagnosticar el correo sin exponer ningún dato.
-    return res.status(500).json({ ok: false, error: "No se pudo enviar la solicitud", codigo: String((e && (e.code || e.responseCode)) || "DESCONOCIDO").slice(0, 30), configurado: !!(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) });
+    return res.status(500).json({ ok: false, error: "No se pudo enviar la solicitud", relay: relayFallo, codigo: String((e && (e.code || e.responseCode)) || "DESCONOCIDO").slice(0, 30), configurado: !!(process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) });
   }
 }
 
