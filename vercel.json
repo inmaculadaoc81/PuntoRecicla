@@ -1,21 +1,17 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "functions": {
+    "api/blog.js": { "includeFiles": "index.html" }
+  },
+  "rewrites": [
+    { "source": "/blog", "destination": "/api/blog" },
+    { "source": "/blog/:slug", "destination": "/api/blog?slug=:slug" },
+    { "source": "/sitemap.xml", "destination": "/api/sitemap" }
+  ],
   "redirects": [
-    {
-      "source": "/sitemap_index.xml",
-      "destination": "/sitemap.xml",
-      "permanent": true
-    },
-    {
-      "source": "/:wp(.*-sitemap\\d*\\.xml)",
-      "destination": "/sitemap.xml",
-      "permanent": true
-    },
-    {
-      "source": "/((?!(?:package\\.json|sitemap\\.xml|vercel\\.json|index\\.html|README\\.txt|robots\\.txt|_vercel|package|sitemap|assets|README|robots|vercel|index|api|solicitud-reciclaje)(?:[/.]|$)).+)",
-      "destination": "/",
-      "permanent": true
-    }
+    { "source": "/sitemap_index.xml", "destination": "/sitemap.xml", "permanent": true },
+    { "source": "/:wp(.*-sitemap\\d*\\.xml)", "destination": "/sitemap.xml", "permanent": true },
+    { "source": "/((?!(?:blog|solicitud-reciclaje|api|assets|sitemap\\.xml|robots\\.txt|_vercel)(?:[/.]|$)).+)", "destination": "/", "permanent": true }
   ]
 }
